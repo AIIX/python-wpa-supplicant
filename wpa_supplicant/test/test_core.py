@@ -125,8 +125,7 @@ class TestWpaSupplicant(unittest.TestCase):
         interface = self._supplicant.create_interface('wlan0')
         self._supplicant._without_introspection.callRemote.assert_called_with(
             'CreateInterface',
-            {'Ifname': 'wlan0',
-             'Driver': None})
+            {'Ifname': 'wlan0'})
         self.assertTrue(isinstance(interface, Interface))
         self.assertEqual(interface.get_path(), '/fi/w1/wpa_supplicant1/Interfaces/3')
 
